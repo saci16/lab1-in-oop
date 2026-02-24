@@ -1,0 +1,203 @@
+package Views;
+
+import Models.User;
+import Controllers.UserController;
+
+
+public class RegisterFrame extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegisterFrame.class.getName());
+
+    public RegisterFrame() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jTextField2 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        FirstName = new javax.swing.JLabel();
+        tf_FName = new javax.swing.JTextField();
+        UserName = new javax.swing.JLabel();
+        tf_LName = new javax.swing.JTextField();
+        LastName = new javax.swing.JLabel();
+        tf_UName = new javax.swing.JTextField();
+        Password = new javax.swing.JLabel();
+        tf_Password = new javax.swing.JPasswordField();
+        btn_Register = new javax.swing.JButton();
+        btn_Login = new javax.swing.JButton();
+
+        jTextField2.setText("jTextField2");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
+        jLabel1.setText("REGISTER HERE");
+
+        FirstName.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        FirstName.setText("First Name:");
+
+        tf_FName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        tf_FName.addActionListener(this::tf_FNameActionPerformed);
+
+        UserName.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        UserName.setText("UserName:");
+
+        tf_LName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        tf_LName.addActionListener(this::tf_LNameActionPerformed);
+
+        LastName.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        LastName.setText("Last Name:");
+
+        tf_UName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        tf_UName.addActionListener(this::tf_UNameActionPerformed);
+
+        Password.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        Password.setText("Password:");
+
+        btn_Register.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn_Register.setText("Register");
+        btn_Register.addActionListener(this::btn_RegisterActionPerformed);
+
+        btn_Login.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn_Login.setText("Login");
+        btn_Login.addActionListener(this::btn_LoginActionPerformed);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tf_LName, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_FName, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_UName, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(btn_Register, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                        .addComponent(btn_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(169, 169, 169))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tf_FName, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tf_LName, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tf_UName, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tf_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Register, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void tf_FNameActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       
+    }                                        
+
+    private void tf_LNameActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        
+    }                                        
+
+    private void tf_UNameActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       
+    }                                        
+
+    private void btn_RegisterActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        
+        User users = new User();
+        UserController uscon = new UserController();
+        
+        users.setFirstName(tf_FName.getText());
+        users.setLastName(tf_LName.getText());
+        users.setUserName(tf_UName.getText());
+        users.setPassword(tf_Password.getText());
+        
+        uscon.register(users);
+        
+        
+        LoginFrame LF = new LoginFrame();
+        LF.setVisible(true);
+        this.dispose();
+        
+    }                                            
+
+    private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        LoginFrame LF = new LoginFrame();
+        LF.setVisible(true);
+        this.dispose();
+        
+    }                                         
+    
+    
+    public static void main(String args[]) {
+
+        java.awt.EventQueue.invokeLater(() -> new RegisterFrame().setVisible(true));
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel FirstName;
+    private javax.swing.JLabel LastName;
+    private javax.swing.JLabel Password;
+    private javax.swing.JLabel UserName;
+    private javax.swing.JButton btn_Login;
+    private javax.swing.JButton btn_Register;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField tf_FName;
+    private javax.swing.JTextField tf_LName;
+    private javax.swing.JPasswordField tf_Password;
+    private javax.swing.JTextField tf_UName;
+    // End of variables declaration                   
+}
