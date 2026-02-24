@@ -1,0 +1,57 @@
+package Controllers;
+
+import Models.User;
+import Database.DBConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+
+
+public class UserController {
+    public void register (User users){
+        String query = "INSERT INTO Users(FirstName, LastName, UserName, Password) values (?,?,?,?)"; 
+        
+        try (Connection conn = DBConnection.getConnection();
+         PreparedStatement ps = conn.prepareStatement(query)){
+            
+            ps.setString(1, users.getFirstName());
+            ps.setString(2, users.getLastName());
+            ps.setString(3, users.getUserName());
+            ps.setString(4, users.getPassword());
+            
+            ps.executeUpdate();
+            System.out.println("Register Success!");
+            
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public User authenticate (String Username, String Password){
+        String sql = "SELECT * FROM Users WHERE UserName = ? and Password = ?";
+        
+        try (Connection conn = DBConnection.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)){
+            
+            ps.setString(1, Username);
+            ps.setString(2, Password);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                User users = new User();
+                users.setID(rs.getInt("id"));
+                users.setUserName(rs.getString("id"));
+                return users;
+                
+            }
+            
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        
+        return null;
+    }   
+}
